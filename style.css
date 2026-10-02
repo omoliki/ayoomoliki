@@ -1,0 +1,1642 @@
+
+:root{
+ --ink:#102026; --text:#45545a; --green:#0c7254; --green-dark:#074a39;
+ --green-deep:#05352a; --cream:#f5f0e6; --paper:#fffaf2; --gold:#b77f2b;
+ --mist:#e8f0eb; --line:#d9cfbd; --shadow:0 26px 68px rgba(16,32,38,.11);
+ --soft:0 12px 30px rgba(16,32,38,.07); --max:1180px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--text);font-family:Manrope,Arial,sans-serif;line-height:1.65}
+img{display:block;max-width:100%} a{text-decoration:none;color:inherit}
+.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,250,242,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(217,207,189,.72)}
+.nav{height:86px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px}
+.brand img{width:218px;height:62px;object-fit:contain;object-position:left center}
+.nav-links{display:flex;justify-content:center;gap:34px}.nav-links a{font-size:.93rem;font-weight:800;color:#27363b}.nav-links a:hover,.nav-links a.active{color:var(--green)}
+.nav-action{display:flex}.menu{display:none;border:0;background:none;font-size:1.7rem;color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 21px;border-radius:999px;font-weight:850;border:1px solid transparent;transition:.2s}
+.btn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2}
+.btn-primary{background:var(--green);color:white}.btn-primary:hover{background:var(--green-dark);transform:translateY(-1px)}
+.btn-outline{background:rgba(255,255,255,.66);color:var(--green-dark);border-color:rgba(12,114,84,.35)}
+.btn-light{background:white;color:var(--green-dark)}
+.eyebrow{margin:0 0 13px;color:var(--gold);font-size:.74rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+h1,h2,h3{margin:0;color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;letter-spacing:-.035em}
+h1{font-size:clamp(3.2rem,5.6vw,5.7rem);line-height:.93;font-weight:650}
+h2{font-size:clamp(2.25rem,3.9vw,3.7rem);line-height:.99;font-weight:650}
+h3{font-size:1.55rem;line-height:1.1}
+.lead{font-size:1.09rem;max-width:670px;margin:20px 0 0}
+
+/* HOME */
+.hero{min-height:500px;position:relative;display:grid;align-items:center;overflow:hidden;background:var(--cream)}
+.hero::before{content:"";position:absolute;inset:0;background:url("assets/winnipeg.jpg") 67% center/cover no-repeat;filter:saturate(.92) contrast(.98)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(245,240,230,.99) 0%,rgba(245,240,230,.95) 42%,rgba(245,240,230,.69) 60%,rgba(245,240,230,.10) 100%)}
+.hero-inner{position:relative;z-index:2;padding:76px 0}.hero-copy{max-width:720px}
+.hero h1 span{color:var(--green)}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-proof{display:flex;gap:22px;flex-wrap:wrap;margin-top:28px;font-size:.88rem;font-weight:750;color:#5e6a6e}
+.hero-proof span{display:flex;gap:8px;align-items:center}.hero-proof i{width:8px;height:8px;background:var(--gold);border-radius:50%}
+
+.section{padding:80px 0}.section.white{background:var(--paper)}
+.split{display:grid;grid-template-columns:1fr .82fr;gap:64px;align-items:end;margin-bottom:36px}.split p{margin:0}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.service-card{padding:27px;border:1px solid var(--line);border-radius:26px;background:rgba(255,253,248,.86);box-shadow:var(--soft);min-height:300px;position:relative;overflow:hidden}
+.service-card::after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-70px;top:-70px;background:radial-gradient(circle,rgba(12,114,84,.10),transparent 68%)}
+.icon{width:52px;height:52px;border-radius:17px;background:var(--mist);color:var(--green);display:grid;place-items:center;margin-bottom:48px}
+.icon svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.65}
+.service-card p{font-size:.93rem;margin:10px 0 16px}.link{font-size:.9rem;font-weight:850;color:var(--green)}
+.link::after{content:" →"}
+.blend{position:relative;min-height:480px;display:grid;align-items:center;background:url("assets/winnipeg.jpg") center 57%/cover no-repeat;overflow:hidden}
+.blend::after{content:"";position:absolute;inset:0;background:rgba(245,240,230,.82)}
+.blend-inner{position:relative;z-index:2;display:grid;grid-template-columns:.94fr 1.06fr;gap:60px;align-items:center}
+.blend-card{background:rgba(255,250,242,.78);backdrop-filter:blur(5px);border:1px solid rgba(255,255,255,.6);border-radius:28px;padding:36px}
+.outcomes{display:grid;gap:12px}.outcome{display:grid;grid-template-columns:58px 1fr;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(16,32,38,.11)}.outcome:last-child{border:0}
+.num{width:52px;height:52px;border-radius:50%;background:rgba(232,240,235,.95);display:grid;place-items:center;font-weight:900;color:var(--green-dark)}
+.outcome strong{display:block;color:var(--ink)}.outcome span{color:#687578}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.step{padding:24px;border-top:2px solid var(--gold);background:rgba(255,253,248,.66)}
+.step small{display:block;color:var(--gold);font-size:.77rem;font-weight:900;letter-spacing:.11em;margin-bottom:10px}
+.price-strip{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;padding:34px 38px;border-radius:28px;background:var(--green-deep);color:white}
+.price-strip h2{color:white;font-size:clamp(2rem,3vw,3rem)}.price-strip p{margin:8px 0 0;color:rgba(255,255,255,.78)}
+.cta{padding:52px 0;background:var(--green)}.cta-inner{display:grid;grid-template-columns:1.1fr .9fr auto;gap:30px;align-items:center;color:white}.cta h2{color:white;font-size:clamp(2.05rem,3vw,3rem)}.cta p{margin:0;color:rgba(255,255,255,.82)}
+
+/* PAGE HERO */
+.page-hero{position:relative;min-height:455px;display:grid;align-items:center;overflow:hidden;background:url("assets/winnipeg.jpg") center/cover no-repeat}
+.page-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(245,240,230,.98),rgba(245,240,230,.90) 55%,rgba(245,240,230,.25))}
+.page-hero .inner{position:relative;z-index:2;max-width:760px;padding:68px 0}
+.page-hero h1{font-size:clamp(3.05rem,5vw,5.1rem)}
+
+/* SERVICES - no filler photography */
+.service-row{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;padding:62px 0;border-bottom:1px solid var(--line)}
+.service-row:last-child{border-bottom:0}.service-row.reverse .copy{order:2}.service-row.reverse .visual{order:1}
+.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}.pill{padding:8px 12px;border-radius:999px;background:var(--mist);color:var(--green-dark);font-size:.82rem;font-weight:850}
+.visual{min-height:340px;border-radius:28px;border:1px solid var(--line);background:linear-gradient(145deg,#edf2ed,#f6ead6);box-shadow:var(--soft);position:relative;overflow:hidden}
+.browser{position:absolute;left:28px;right:28px;top:46px;background:white;border-radius:17px;box-shadow:var(--shadow);overflow:hidden}.browser-top{height:34px;background:#f0f1ed;border-bottom:1px solid #e1e3df;display:flex;gap:6px;align-items:center;padding:0 12px}.dot{width:7px;height:7px;border-radius:50%;background:#c5cbc7}
+.browser-body{padding:21px;display:grid;grid-template-columns:1.07fr .93fr;gap:14px}.mock-title{height:11px;background:var(--green-dark);border-radius:8px;margin-bottom:10px}.mock-line{height:7px;background:#dbe4de;border-radius:8px;margin-bottom:7px}.mock-btn{height:23px;width:72px;border-radius:18px;background:var(--green);margin-top:12px}.mock-img{min-height:100px;border-radius:10px;background:linear-gradient(160deg,#9dc4ae,#d7c49b)}
+.dashboard{position:absolute;inset:38px;border-radius:18px;background:white;box-shadow:var(--shadow);padding:20px}.dash-top{display:flex;gap:9px}.dash-chip{height:10px;width:22%;background:#dae5de;border-radius:8px}.chart{height:145px;margin-top:30px;display:flex;align-items:end;gap:11px}.bar{flex:1;background:linear-gradient(#bbd1c3,var(--green));border-radius:8px 8px 2px 2px}.bar:nth-child(1){height:38%}.bar:nth-child(2){height:57%}.bar:nth-child(3){height:44%}.bar:nth-child(4){height:82%}.bar:nth-child(5){height:69%}
+.phone{position:absolute;width:124px;height:224px;border-radius:26px;background:#142127;right:44px;top:54px;padding:8px;box-shadow:var(--shadow)}.phone-inner{height:100%;background:white;border-radius:18px;padding:18px 11px;display:flex;flex-direction:column;align-items:center}.qr{width:78px;height:78px;margin-top:22px;background:repeating-linear-gradient(0deg,#0c7254 0 5px,#fff 5px 10px),repeating-linear-gradient(90deg,#0c7254 0 5px,#fff 5px 10px);mix-blend-mode:multiply;border:5px solid white;box-shadow:0 0 0 1px #d9e3dc}.ticket{width:84%;height:36px;border-radius:9px;background:var(--mist);margin-top:15px}
+.workflow{position:absolute;inset:0;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:18px}.node{background:white;padding:18px;border-radius:17px;box-shadow:var(--soft);align-self:center}.node strong{display:block;color:var(--ink)}.node small{color:#718084}.node:nth-child(2){transform:translateY(45px)}.node:nth-child(3){transform:translateY(-26px)}
+
+/* ABOUT */
+.about-intro{display:grid;grid-template-columns:.92fr 1.08fr;gap:54px;align-items:center}
+.about-photo{border-radius:32px;overflow:hidden;box-shadow:var(--shadow);height:520px;background:#dfe8e2}.about-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.about-copy p{max-width:640px}.traits{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}.trait{background:var(--mist);padding:9px 13px;border-radius:999px;color:var(--green-dark);font-size:.84rem;font-weight:850}
+
+/* subtle photo background beside "Winnipeg roots" */
+.roots{position:relative;min-height:470px;overflow:hidden;display:grid;align-items:center;background:var(--cream)}
+.roots::before{content:"";position:absolute;inset:0;background:url("assets/ayo-about.jpg") 76% 35%/cover no-repeat;opacity:.16;filter:saturate(.75) contrast(.92)}
+.roots::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(245,240,230,.99),rgba(245,240,230,.90) 52%,rgba(245,240,230,.58))}
+.roots-inner{position:relative;z-index:2;display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.roots-card{padding:34px;border-radius:27px;background:rgba(255,250,242,.72);border:1px solid rgba(255,255,255,.7);backdrop-filter:blur(4px)}
+.values{display:grid;gap:13px}
+
+/* CONTACT */
+.contact-wrap{display:grid;grid-template-columns:1fr .9fr;gap:28px}.contact-card{padding:30px;border-radius:26px;border:1px solid var(--line);background:var(--paper)}
+.contact-line{display:flex;gap:13px;padding:15px 0;border-bottom:1px solid var(--line)}.contact-line:last-child{border:0}.contact-line svg{width:22px;height:22px;fill:none;stroke:var(--green);stroke-width:1.7;flex:0 0 auto}
+.faq{display:grid;gap:12px}.faq details{background:var(--paper);border:1px solid var(--line);border-radius:17px;padding:0 20px}.faq summary{list-style:none;cursor:pointer;padding:19px 35px 19px 0;font-weight:800;color:var(--ink);position:relative}.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";position:absolute;right:0;color:var(--green);font-size:1.4rem}.faq details[open] summary::after{content:"–"}.faq p{margin:0 0 19px}
+
+/* FOOTER */
+.footer{padding:44px 0 24px;background:var(--green-deep);color:rgba(255,255,255,.76)}.footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:34px}.footer img{width:205px;filter:brightness(0) invert(1)}.footer h4{margin:0 0 10px;color:white}.footer a{display:block;margin:7px 0}.footer-note{margin-top:12px;font-size:.9rem}.footer-bottom{border-top:1px solid rgba(255,255,255,.13);margin-top:26px;padding-top:18px;font-size:.82rem}
+
+@media(max-width:1020px){
+ .nav-links,.nav-action{display:none}.menu{display:block;justify-self:end}.nav{grid-template-columns:auto 1fr}
+ .nav-links.open{display:flex;position:absolute;left:0;right:0;top:86px;background:var(--paper);padding:22px;flex-direction:column;border-bottom:1px solid var(--line)}
+ .service-grid{grid-template-columns:repeat(2,1fr)}
+ .split,.blend-inner,.service-row,.about-intro,.roots-inner,.contact-wrap{grid-template-columns:1fr}
+ .service-row.reverse .copy,.service-row.reverse .visual{order:initial}
+ .process{grid-template-columns:repeat(2,1fr)}
+ .cta-inner{grid-template-columns:1fr auto}.cta-inner p{grid-column:1/-1}
+}
+@media(max-width:700px){
+ .container{width:min(var(--max),calc(100% - 28px))}.brand img{width:180px;height:54px}.nav{height:76px}.nav-links.open{top:76px}
+ .hero{min-height:610px}.hero::before{background-position:62% center}.hero::after{background:rgba(245,240,230,.80)}
+ .hero-inner{padding:58px 0}.section{padding:62px 0}h1{font-size:clamp(2.95rem,13vw,4.3rem)}
+ .service-grid,.process,.footer-grid{grid-template-columns:1fr}.service-card{min-height:270px}.icon{margin-bottom:36px}
+ .price-strip,.cta-inner{grid-template-columns:1fr}.price-strip .btn,.cta-inner .btn{width:100%}.cta-inner p{grid-column:auto}
+ .page-hero{min-height:400px}.page-hero::after{background:rgba(245,240,230,.79)}
+ .visual{min-height:310px}.about-photo{height:420px}
+ .roots::before{background-position:center 25%;opacity:.13}.roots::after{background:rgba(245,240,230,.84)}
+}
+
+
+/* V17.1 approved service-specific visuals */
+.service-image{
+  min-height:0;
+  aspect-ratio:16/10;
+  padding:0;
+  background:linear-gradient(145deg,#edf2ed,#f6ead6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.service-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  border-radius:27px;
+}
+@media(max-width:700px){
+  .service-image{aspect-ratio:4/3;}
+}
+
+
+/* ===========================
+   V18 LOCKED DESIGN DIRECTION
+   =========================== */
+
+/* Header: premium cream + exact logo */
+.site-header{
+  background:rgba(255,250,242,.97);
+  border-bottom:1px solid rgba(217,207,189,.65);
+}
+.brand img{filter:none}
+
+/* HOME: dark-green premium hero with Ayo's real portrait */
+.hero-v18{
+  min-height:650px;
+  background:
+    radial-gradient(circle at 78% 20%, rgba(32,110,83,.28), transparent 34%),
+    linear-gradient(135deg,#083f31 0%,#0a4a39 46%,#063629 100%);
+  position:relative;
+  overflow:hidden;
+}
+.hero-v18::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 87% 16%, rgba(183,127,43,.13), transparent 25%),
+    linear-gradient(120deg, transparent 48%, rgba(255,255,255,.03) 48.2%, transparent 48.5%);
+  pointer-events:none;
+}
+.hero-v18-inner{
+  min-height:650px;
+  display:grid;
+  grid-template-columns:1.02fr .98fr;
+  align-items:end;
+  gap:30px;
+  position:relative;
+  z-index:2;
+}
+.hero-v18-copy{
+  align-self:center;
+  padding:70px 0 72px;
+  max-width:620px;
+}
+.hero-v18 h1{
+  color:#fff;
+  font-size:clamp(3.1rem,5.6vw,5.7rem);
+}
+.hero-v18 h1 span{color:#d79a38}
+.hero-v18 .lead{
+  color:rgba(255,255,255,.86);
+  max-width:560px;
+  font-size:1.08rem;
+}
+.hero-v18-photo{
+  height:610px;
+  align-self:end;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  overflow:hidden;
+}
+.hero-v18-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 23%;
+  border-radius:0;
+  mix-blend-mode:normal;
+  -webkit-mask-image:linear-gradient(to top, #000 87%, rgba(0,0,0,.95) 94%, transparent 100%);
+  mask-image:linear-gradient(to top, #000 87%, rgba(0,0,0,.95) 94%, transparent 100%);
+}
+.btn-gold{
+  background:#cf8a24;
+  color:#fff;
+  border-color:#cf8a24;
+}
+.btn-gold:hover{background:#b9781c;transform:translateY(-1px)}
+.btn-ghost-light{
+  background:transparent;
+  color:#fff;
+  border:2px solid rgba(255,255,255,.9);
+}
+.btn-ghost-light:hover{background:rgba(255,255,255,.08)}
+.btn-gold svg,.btn-ghost-light svg{
+  width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;
+}
+
+/* Real Winnipeg skyline block: never AI-generated */
+.roots-strip{
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+}
+.roots-title{
+  text-align:center;
+  color:var(--gold);
+  text-transform:uppercase;
+  font-size:.78rem;
+  letter-spacing:.18em;
+  font-weight:900;
+  padding:22px 14px 16px;
+}
+.roots-title span{margin:0 6px}
+.roots-photo{
+  width:100%;
+  height:330px;
+  overflow:hidden;
+}
+.roots-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 44%;
+  filter:saturate(.96) contrast(.98);
+}
+.proof-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  padding:30px 0 34px;
+}
+.proof-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:11px;
+  text-align:center;
+  min-height:120px;
+  border-right:1px solid var(--line);
+  color:var(--ink);
+}
+.proof-item:last-child{border-right:0}
+.proof-icon{
+  width:68px;height:68px;border-radius:50%;
+  background:#e9eee4;
+  display:grid;place-items:center;
+  font-size:1.65rem;color:var(--green-dark);
+}
+.proof-item strong{font-size:.96rem}
+
+/* SERVICES: keep the approved product visuals as the visual language */
+.service-image{
+  box-shadow:0 18px 48px rgba(16,32,38,.10);
+}
+.service-image img{
+  border-radius:27px;
+}
+
+/* ABOUT: warmer, human, but still premium */
+.about-photo{
+  background:#f0e7da;
+}
+.about-photo img{
+  object-position:center 28%;
+}
+.roots::before{
+  background-image:url("assets/ayo-about-professional.png");
+  background-position:75% 30%;
+  opacity:.13;
+}
+
+/* CONTACT: more focused and premium, without filler imagery */
+.contact-card{
+  box-shadow:0 12px 32px rgba(16,32,38,.05);
+}
+.faq details{
+  box-shadow:0 6px 18px rgba(16,32,38,.035);
+}
+
+/* Footer: logo only in first column */
+.footer-note{display:none!important}
+
+/* MOBILE */
+@media(max-width:1020px){
+  .hero-v18-inner{
+    grid-template-columns:1fr;
+    min-height:auto;
+    padding-top:18px;
+  }
+  .hero-v18-copy{
+    padding:52px 0 20px;
+  }
+  .hero-v18-photo{
+    height:500px;
+    width:min(620px,100%);
+    justify-self:center;
+  }
+}
+@media(max-width:700px){
+  .hero-v18{
+    min-height:auto;
+  }
+  .hero-v18-inner{
+    width:100%;
+    grid-template-columns:1fr;
+    gap:0;
+  }
+  .hero-v18-copy{
+    padding:46px 22px 18px;
+    max-width:none;
+  }
+  .hero-v18 h1{
+    font-size:clamp(3rem,12.8vw,4.15rem);
+    line-height:.92;
+  }
+  .hero-v18 .lead{
+    font-size:1rem;
+    line-height:1.55;
+  }
+  .hero-v18 .hero-actions{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+  .hero-v18 .btn{
+    width:100%;
+  }
+  .hero-v18-photo{
+    height:430px;
+    width:100%;
+  }
+  .hero-v18-photo img{
+    object-position:center 18%;
+  }
+  .roots-photo{height:245px}
+  .proof-grid{
+    grid-template-columns:repeat(3,1fr);
+    padding:24px 10px 28px;
+  }
+  .proof-item{
+    min-height:118px;
+    padding:0 8px;
+  }
+  .proof-icon{width:58px;height:58px;font-size:1.4rem}
+  .proof-item strong{font-size:.82rem;line-height:1.25}
+}
+
+
+/* =========================================================
+   V18.2 — TYPOGRAPHY + ALIGNMENT + PRICING SYSTEM
+   Locked global rules for editorial consistency
+   ========================================================= */
+
+/* Editorial section system */
+.section .split{
+  grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+  gap:clamp(42px,5.2vw,78px);
+  align-items:center;
+  margin-bottom:42px;
+}
+
+.section .split > div,
+.section .split > p{
+  min-width:0;
+}
+
+.section .split h2{
+  font-size:clamp(3.25rem,4.55vw,4.15rem);
+  line-height:1.02;
+  letter-spacing:-.04em;
+  max-width:760px;
+}
+
+.section .split > p{
+  font-size:clamp(1.25rem,1.55vw,1.5rem);
+  line-height:1.52;
+  max-width:640px;
+  justify-self:end;
+  color:#425157;
+}
+
+.section .split .eyebrow{
+  font-size:.82rem;
+  line-height:1.3;
+  margin-bottom:15px;
+}
+
+/* Keep pricing language visually consistent */
+.price-strip{
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:42px;
+  padding:42px 48px;
+  align-items:center;
+}
+
+.price-strip h2{
+  font-size:clamp(2.5rem,3.6vw,3.55rem);
+  line-height:1.04;
+}
+
+.price-strip p{
+  font-size:1.02rem;
+  line-height:1.55;
+  max-width:900px;
+}
+
+.price-strip .eyebrow{
+  font-size:.82rem;
+}
+
+/* Services CTA follows reassurance → explanation → action */
+.cta{
+  padding:64px 0;
+}
+
+.cta-inner{
+  grid-template-columns:minmax(0,1.05fr) minmax(300px,.85fr) auto;
+  gap:clamp(34px,4vw,64px);
+  align-items:center;
+}
+
+.cta h2{
+  font-size:clamp(2.65rem,3.7vw,3.65rem);
+  line-height:1.03;
+  max-width:580px;
+}
+
+.cta p{
+  font-size:clamp(1.12rem,1.35vw,1.32rem);
+  line-height:1.5;
+  max-width:560px;
+}
+
+/* Normalize editorial copy rhythm site-wide */
+.page-hero .lead,
+.about-copy p,
+.service-row .copy p,
+.contact-card p{
+  line-height:1.58;
+}
+
+/* Tablet */
+@media(max-width:1020px){
+  .section .split{
+    grid-template-columns:1fr;
+    gap:22px;
+    align-items:start;
+  }
+  .section .split > p{
+    justify-self:start;
+    max-width:760px;
+  }
+
+  .cta-inner{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+  .cta-inner p{
+    grid-column:auto;
+    max-width:720px;
+  }
+  .cta-inner .btn{
+    width:max-content;
+  }
+
+  .price-strip{
+    grid-template-columns:1fr;
+  }
+  .price-strip .btn{
+    width:max-content;
+  }
+}
+
+/* Mobile */
+@media(max-width:700px){
+  .section .split{
+    gap:18px;
+    margin-bottom:30px;
+  }
+
+  .section .split h2{
+    font-size:clamp(2.55rem,11vw,3.35rem);
+    line-height:1.01;
+  }
+
+  .section .split > p{
+    font-size:1.08rem;
+    line-height:1.55;
+  }
+
+  .price-strip{
+    padding:32px 24px;
+    gap:24px;
+  }
+
+  .price-strip h2{
+    font-size:clamp(2.2rem,9vw,2.85rem);
+  }
+
+  .price-strip .btn,
+  .cta-inner .btn{
+    width:100%;
+  }
+
+  .cta{
+    padding:50px 0;
+  }
+
+  .cta h2{
+    font-size:clamp(2.35rem,9.5vw,3rem);
+  }
+
+  .cta p{
+    font-size:1.05rem;
+  }
+}
+
+
+/* =========================================================
+   V18.3 — HOMEPAGE ONLY CORRECTION
+   Other pages intentionally untouched.
+   ========================================================= */
+
+body.home-v183 > .site-header{
+  display:none;
+}
+
+.home-hero-v183{
+  background:#073f32;
+  color:#fff;
+  overflow:hidden;
+}
+
+.home-hero-shell{
+  width:min(1380px, calc(100% - 48px));
+  margin:0 auto;
+}
+
+.home-hero-nav{
+  min-height:104px;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:36px;
+  position:relative;
+  z-index:5;
+}
+
+.home-logo img{
+  width:220px;
+  height:auto;
+  display:block;
+  filter:brightness(0) invert(1);
+}
+
+.home-nav-links{
+  justify-self:center;
+  display:flex;
+  gap:38px;
+  align-items:center;
+}
+
+.home-nav-links a{
+  color:rgba(255,255,255,.92);
+  font-weight:700;
+  font-size:1rem;
+  text-decoration:none;
+}
+
+.home-nav-links a.active,
+.home-nav-links a:hover{
+  color:#d99a36;
+}
+
+.home-nav-cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:52px;
+  padding:0 26px;
+  border-radius:999px;
+  background:#d08a24;
+  color:#fff;
+  font-weight:800;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+.home-menu-toggle{
+  display:none;
+  width:44px;
+  height:44px;
+  border:0;
+  background:transparent;
+  padding:8px;
+}
+.home-menu-toggle span{
+  display:block;
+  height:2px;
+  background:#fff;
+  margin:6px 0;
+}
+
+.home-hero-grid{
+  min-height:700px;
+  display:grid;
+  grid-template-columns:minmax(0,1.03fr) minmax(420px,.97fr);
+  gap:28px;
+  align-items:end;
+  position:relative;
+}
+
+.home-hero-copy{
+  align-self:center;
+  padding:72px 0 90px;
+  position:relative;
+  z-index:3;
+  max-width:700px;
+}
+
+.home-hero-copy h1{
+  margin:0;
+  color:#fff;
+  font-size:clamp(4rem,5.9vw,6.25rem);
+  line-height:.93;
+  letter-spacing:-.045em;
+  max-width:700px;
+}
+
+.home-hero-copy h1 span{
+  color:#d99a36;
+}
+
+.home-hero-copy p{
+  margin:30px 0 0;
+  max-width:610px;
+  color:rgba(255,255,255,.88);
+  font-size:1.17rem;
+  line-height:1.58;
+}
+
+.home-hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:36px;
+}
+
+.home-btn-gold,
+.home-btn-outline{
+  min-height:58px;
+  padding:0 28px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  gap:18px;
+  justify-content:center;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.home-btn-gold{
+  background:#d08a24;
+  border:1px solid #d08a24;
+  color:#fff;
+}
+
+.home-btn-outline{
+  background:transparent;
+  border:2px solid rgba(255,255,255,.9);
+  color:#fff;
+}
+
+.home-hero-person{
+  align-self:end;
+  height:650px;
+  position:relative;
+}
+
+.home-hero-person::before{
+  content:"";
+  position:absolute;
+  inset:8% -3% 0 8%;
+  border-radius:52% 42% 0 0;
+  background:
+    radial-gradient(circle at 58% 20%, rgba(74,132,108,.38), transparent 34%),
+    radial-gradient(circle at 52% 48%, rgba(255,255,255,.05), transparent 56%);
+  z-index:0;
+}
+
+.home-hero-photo-wrap{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  overflow:hidden;
+  -webkit-mask-image:
+    radial-gradient(ellipse 72% 82% at 58% 46%, #000 58%, rgba(0,0,0,.88) 70%, transparent 100%),
+    linear-gradient(to top, #000 78%, rgba(0,0,0,.97) 90%, transparent 100%);
+  -webkit-mask-composite:source-in;
+  mask-image:
+    radial-gradient(ellipse 72% 82% at 58% 46%, #000 58%, rgba(0,0,0,.88) 70%, transparent 100%),
+    linear-gradient(to top, #000 78%, rgba(0,0,0,.97) 90%, transparent 100%);
+  mask-composite:intersect;
+}
+
+.home-hero-photo-wrap::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg, #073f32 0%, rgba(7,63,50,.78) 13%, transparent 34%),
+    linear-gradient(0deg, #073f32 0%, transparent 22%);
+  pointer-events:none;
+}
+
+.home-hero-photo-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 20%;
+  display:block;
+  transform:scale(1.03);
+}
+
+.winnipeg-editorial{
+  background:#f8f2e9;
+  padding:54px 0 46px;
+  border-bottom:1px solid rgba(31,51,51,.08);
+}
+
+.winnipeg-kicker{
+  text-align:center;
+  color:#b7771d;
+  text-transform:uppercase;
+  font-size:.82rem;
+  font-weight:900;
+  letter-spacing:.18em;
+  margin-bottom:22px;
+}
+
+.winnipeg-kicker span{
+  padding:0 7px;
+}
+
+.winnipeg-frame{
+  width:min(1180px,100%);
+  height:360px;
+  margin:0 auto;
+  overflow:hidden;
+  border-radius:28px;
+  background:#e8e0d4;
+}
+
+.winnipeg-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 48%;
+  display:block;
+}
+
+.home-proof-grid{
+  width:min(980px,100%);
+  margin:34px auto 0;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+}
+
+.home-proof-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  text-align:center;
+  min-height:118px;
+  padding:8px 18px;
+  border-right:1px solid rgba(31,51,51,.12);
+}
+
+.home-proof-item:last-child{
+  border-right:0;
+}
+
+.home-proof-icon{
+  width:66px;
+  height:66px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#e8eddf;
+  color:#073f32;
+  font-size:1.55rem;
+}
+
+.home-proof-item strong{
+  font-size:.98rem;
+  color:#102427;
+}
+
+@media(max-width:1100px){
+  .home-hero-nav{
+    grid-template-columns:auto 1fr auto;
+  }
+  .home-nav-links{
+    display:none;
+  }
+  .home-menu-toggle{
+    display:block;
+  }
+  .home-nav-cta{
+    display:none;
+  }
+  .home-hero-grid{
+    grid-template-columns:1fr 1fr;
+  }
+  .home-hero-copy h1{
+    font-size:clamp(3.5rem,6vw,5.2rem);
+  }
+}
+
+@media(max-width:780px){
+  .home-hero-shell{
+    width:100%;
+  }
+  .home-hero-nav{
+    min-height:88px;
+    padding:0 22px;
+    grid-template-columns:1fr auto;
+  }
+  .home-logo img{
+    width:190px;
+  }
+  .home-hero-grid{
+    grid-template-columns:1fr;
+    min-height:auto;
+    gap:0;
+  }
+  .home-hero-copy{
+    padding:50px 22px 20px;
+    max-width:none;
+  }
+  .home-hero-copy h1{
+    font-size:clamp(3.15rem,12.5vw,4.35rem);
+    line-height:.95;
+  }
+  .home-hero-copy p{
+    font-size:1.02rem;
+    margin-top:24px;
+  }
+  .home-hero-actions{
+    display:grid;
+    grid-template-columns:1fr;
+    margin-top:30px;
+  }
+  .home-btn-gold,
+  .home-btn-outline{
+    width:100%;
+  }
+  .home-hero-person{
+    height:440px;
+  }
+  .home-hero-photo-wrap{
+    -webkit-mask-image:
+      radial-gradient(ellipse 84% 86% at 56% 46%, #000 60%, rgba(0,0,0,.88) 72%, transparent 100%),
+      linear-gradient(to top, #000 82%, rgba(0,0,0,.96) 92%, transparent 100%);
+    mask-image:
+      radial-gradient(ellipse 84% 86% at 56% 46%, #000 60%, rgba(0,0,0,.88) 72%, transparent 100%),
+      linear-gradient(to top, #000 82%, rgba(0,0,0,.96) 92%, transparent 100%);
+  }
+  .home-hero-photo-wrap img{
+    object-position:center 18%;
+  }
+  .winnipeg-editorial{
+    padding:38px 18px 34px;
+  }
+  .winnipeg-frame{
+    height:235px;
+    border-radius:20px;
+  }
+  .home-proof-grid{
+    margin-top:26px;
+    grid-template-columns:repeat(3,1fr);
+  }
+  .home-proof-item{
+    min-height:112px;
+    padding:6px 8px;
+  }
+  .home-proof-icon{
+    width:56px;
+    height:56px;
+    font-size:1.35rem;
+  }
+  .home-proof-item strong{
+    font-size:.8rem;
+    line-height:1.25;
+  }
+}
+
+@media(max-width:520px){
+  .home-logo img{
+    width:170px;
+  }
+  .home-hero-person{
+    height:390px;
+  }
+}
+
+
+/* =========================================================
+   FINAL PRODUCTION DESIGN SYSTEM
+   ========================================================= */
+
+:root{
+  --cream:#fbf6ee;
+  --cream-2:#f7efe4;
+  --green:#0b4a39;
+  --green-deep:#073b2e;
+  --gold:#c9892b;
+  --ink:#102226;
+  --muted:#536168;
+  --line:rgba(11,74,57,.18);
+}
+
+/* HOME — real Winnipeg skyline hero, no portrait */
+.home-hero-final{
+  position:relative;
+  min-height:650px;
+  display:flex;
+  align-items:center;
+  background:
+    url("assets/winnipeg-real.jpg") center 47% / cover no-repeat;
+  overflow:hidden;
+}
+.home-hero-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,
+      rgba(5,52,40,.94) 0%,
+      rgba(5,52,40,.88) 34%,
+      rgba(5,52,40,.60) 57%,
+      rgba(5,52,40,.16) 100%);
+}
+.home-hero-final-inner{
+  position:relative;
+  z-index:1;
+  width:100%;
+}
+.home-hero-final-copy{
+  max-width:690px;
+  padding:88px 0 92px;
+}
+.home-hero-final-copy .hero-kicker{
+  color:#e3a13e;
+  margin-bottom:18px;
+}
+.home-hero-final-copy h1{
+  color:#fff;
+  font-size:clamp(3.8rem,5.6vw,5.9rem);
+  line-height:.95;
+  letter-spacing:-.045em;
+  margin:0;
+}
+.home-hero-final-copy h1 span{color:#e0a03d}
+.home-hero-final-copy p{
+  color:rgba(255,255,255,.9);
+  font-size:1.16rem;
+  line-height:1.58;
+  margin:28px 0 0;
+  max-width:590px;
+}
+.home-hero-actions{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:34px;
+}
+.home-btn-gold,
+.home-btn-outline{
+  min-height:58px;
+  border-radius:999px;
+  padding:0 28px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  font-weight:800;
+  text-decoration:none;
+}
+.home-btn-gold{
+  background:#d28d26;
+  color:#fff;
+  border:1px solid #d28d26;
+}
+.home-btn-outline{
+  color:#fff;
+  border:2px solid rgba(255,255,255,.92);
+  background:rgba(0,0,0,.05);
+}
+
+.home-proof-band{
+  background:var(--cream);
+  border-bottom:1px solid rgba(16,34,38,.08);
+}
+.home-proof-grid{
+  width:min(980px,100%);
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  padding:28px 0 32px;
+}
+.home-proof-item{
+  min-height:116px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:11px;
+  text-align:center;
+  border-right:1px solid rgba(16,34,38,.12);
+}
+.home-proof-item:last-child{border-right:0}
+.home-proof-icon{
+  width:64px;height:64px;border-radius:50%;
+  background:#e8eee3;
+  display:grid;place-items:center;
+  color:var(--green);
+  font-size:1.5rem;
+}
+.home-proof-item strong{
+  color:var(--ink);
+  font-size:.98rem;
+}
+
+/* Inner-page hero signature */
+.outlined-hero{
+  width:min(1280px, calc(100% - 40px));
+  margin:28px auto 48px;
+  border:1.5px solid rgba(11,74,57,.78);
+  border-radius:28px;
+  overflow:hidden;
+  background-color:var(--cream);
+}
+.outlined-hero::before{
+  border-radius:28px;
+}
+.outlined-hero .container{
+  width:100%;
+  padding-left:clamp(26px,4vw,58px);
+  padding-right:clamp(26px,4vw,58px);
+}
+
+/* Keep existing About portrait untouched */
+.about-photo img{
+  object-position:center 28%;
+}
+
+/* Pricing consistency */
+.price-strip h2,
+.price-strip h2 *,
+.price-strip .price-line,
+.price-strip .price-line *{
+  color:#fff !important;
+}
+.price-strip .eyebrow{
+  color:#e3a13e !important;
+}
+
+/* Legal pages */
+.legal-page{
+  background:var(--cream);
+  padding:72px 0 90px;
+}
+.legal-wrap{
+  max-width:900px;
+}
+.legal-wrap h1{
+  font-size:clamp(3rem,5vw,5rem);
+  line-height:1;
+  margin:10px 0 8px;
+}
+.legal-updated{
+  color:var(--muted);
+  margin-bottom:46px;
+}
+.legal-wrap h2{
+  font-size:1.35rem;
+  margin:34px 0 10px;
+}
+.legal-wrap p{
+  color:#3f4c52;
+  line-height:1.72;
+}
+.legal-wrap a{color:var(--green);font-weight:700}
+
+/* Footer legal */
+.footer-legal{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding-top:18px;
+  padding-bottom:18px;
+  border-top:1px solid rgba(255,255,255,.12);
+  font-size:.88rem;
+}
+.footer-legal a{color:inherit}
+
+/* Mobile */
+@media(max-width:780px){
+  .home-hero-final{
+    min-height:720px;
+    background-position:58% center;
+  }
+  .home-hero-overlay{
+    background:
+      linear-gradient(180deg,
+        rgba(5,52,40,.95) 0%,
+        rgba(5,52,40,.90) 52%,
+        rgba(5,52,40,.54) 78%,
+        rgba(5,52,40,.18) 100%);
+  }
+  .home-hero-final-copy{
+    padding:58px 22px 280px;
+    max-width:none;
+  }
+  .home-hero-final-copy h1{
+    font-size:clamp(3rem,12vw,4.2rem);
+    line-height:.96;
+  }
+  .home-hero-final-copy p{
+    font-size:1.02rem;
+  }
+  .home-hero-actions{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+  .home-btn-gold,.home-btn-outline{width:100%}
+
+  .home-proof-grid{
+    grid-template-columns:repeat(3,1fr);
+    padding:22px 10px 26px;
+  }
+  .home-proof-item{
+    padding:0 7px;
+    min-height:110px;
+  }
+  .home-proof-icon{width:56px;height:56px;font-size:1.3rem}
+  .home-proof-item strong{font-size:.8rem;line-height:1.25}
+
+  .outlined-hero{
+    width:calc(100% - 24px);
+    margin:18px auto 34px;
+    border-radius:22px;
+  }
+  .outlined-hero::before{border-radius:22px}
+
+  .footer-legal{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+
+
+/* =========================================================
+   FINAL V2 — UNIQUE PAGE HERO SYSTEM
+   Less repetition, tighter spacing, same premium language
+   ========================================================= */
+
+/* Bring page hero closer to the header */
+.outlined-hero{
+  width:min(1280px, calc(100% - 32px));
+  margin:12px auto 42px;
+  min-height:520px;
+  border:1.5px solid rgba(11,74,57,.82);
+  border-radius:28px;
+  overflow:hidden;
+  position:relative;
+  display:flex;
+  align-items:center;
+  isolation:isolate;
+}
+
+/* Remove the old repeated Winnipeg background from inner heroes */
+.outlined-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background:none;
+  opacity:1;
+  border-radius:28px;
+}
+
+/* Shared hero text treatment */
+.outlined-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  border-radius:28px;
+  pointer-events:none;
+}
+
+.outlined-hero .container{
+  width:100%;
+  padding:0 clamp(28px,4vw,62px);
+}
+
+.outlined-hero .inner{
+  max-width:760px;
+  padding:64px 0 68px;
+}
+
+.outlined-hero .eyebrow{
+  margin-bottom:18px;
+}
+
+.outlined-hero h1{
+  font-size:clamp(3.7rem,5vw,5.4rem);
+  line-height:.98;
+  letter-spacing:-.04em;
+  margin:0;
+}
+
+.outlined-hero .lead{
+  margin-top:26px;
+  max-width:680px;
+  font-size:1.18rem;
+  line-height:1.55;
+  color:#425157;
+}
+
+/* SERVICES — actual digital-solution visual, not another cityscape */
+.services-page .outlined-hero{
+  background:
+    linear-gradient(90deg,
+      rgba(251,246,238,.98) 0%,
+      rgba(251,246,238,.94) 42%,
+      rgba(251,246,238,.62) 63%,
+      rgba(251,246,238,.14) 100%),
+    url("assets/services-hero-digital.png") 82% 50% / 54% auto no-repeat,
+    #f8f2e9;
+}
+.services-page .outlined-hero::after{
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+}
+
+/* ABOUT — Ayo as a soft background, keeping the approved portrait below untouched */
+.about-page .outlined-hero{
+  background:
+    linear-gradient(90deg,
+      rgba(251,246,238,.99) 0%,
+      rgba(251,246,238,.96) 43%,
+      rgba(251,246,238,.68) 61%,
+      rgba(251,246,238,.18) 100%),
+    url("assets/about-hero-ayo.png") 84% 34% / 50% auto no-repeat,
+    #f8f2e9;
+}
+.about-page .outlined-hero::after{
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));
+}
+
+/* CONTACT — real Manitoba landscape; local without repeating Winnipeg */
+.contact-page .outlined-hero{
+  background:
+    linear-gradient(90deg,
+      rgba(251,246,238,.99) 0%,
+      rgba(251,246,238,.94) 43%,
+      rgba(251,246,238,.56) 62%,
+      rgba(251,246,238,.08) 100%),
+    url("assets/contact-hero-manitoba.jpg") center 50% / cover no-repeat;
+}
+.contact-page .outlined-hero::after{
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+}
+
+/* Home stays the immersive real-Winnipeg entry point, but local language is broader */
+.home-hero-final-copy .hero-kicker{
+  letter-spacing:.16em;
+}
+
+/* Preserve the approved About portrait EXACTLY */
+.about-photo img{
+  object-position:center 28%;
+}
+
+/* Mobile: tighter than before and unique backgrounds remain visible */
+@media(max-width:780px){
+  .outlined-hero{
+    width:calc(100% - 20px);
+    margin:10px auto 30px;
+    min-height:610px;
+    border-radius:22px;
+    align-items:flex-start;
+  }
+  .outlined-hero::before,
+  .outlined-hero::after{
+    border-radius:22px;
+  }
+  .outlined-hero .container{
+    padding:0 22px;
+  }
+  .outlined-hero .inner{
+    padding:56px 0 56px;
+    max-width:none;
+  }
+  .outlined-hero h1{
+    font-size:clamp(3.1rem,11vw,4.15rem);
+    line-height:.98;
+  }
+  .outlined-hero .lead{
+    font-size:1.05rem;
+    line-height:1.55;
+  }
+
+  .services-page .outlined-hero{
+    background:
+      linear-gradient(180deg,
+        rgba(251,246,238,.99) 0%,
+        rgba(251,246,238,.96) 52%,
+        rgba(251,246,238,.72) 72%,
+        rgba(251,246,238,.28) 100%),
+      url("assets/services-hero-digital.png") center 92% / 96% auto no-repeat,
+      #f8f2e9;
+  }
+
+  .about-page .outlined-hero{
+    background:
+      linear-gradient(180deg,
+        rgba(251,246,238,.99) 0%,
+        rgba(251,246,238,.96) 54%,
+        rgba(251,246,238,.68) 74%,
+        rgba(251,246,238,.24) 100%),
+      url("assets/about-hero-ayo.png") center 92% / 96% auto no-repeat,
+      #f8f2e9;
+  }
+
+  .contact-page .outlined-hero{
+    background:
+      linear-gradient(180deg,
+        rgba(251,246,238,.99) 0%,
+        rgba(251,246,238,.94) 52%,
+        rgba(251,246,238,.56) 72%,
+        rgba(251,246,238,.12) 100%),
+      url("assets/contact-hero-manitoba.jpg") center 72% / cover no-repeat;
+  }
+}
+
+
+/* =========================================================
+   LOCKED HERO SYSTEM — FINAL IMPLEMENTATION
+   Same premium forest-green overlay on all four main pages.
+   Only the background image changes.
+   ========================================================= */
+:root{--locked-green:#073f31;--locked-green-2:#0a523d;--locked-gold:#d2922f}
+.locked-site .site-header{background:rgba(255,250,242,.97);border-bottom:1px solid rgba(7,63,49,.12)}
+.locked-site .outlined-hero{width:min(1280px,calc(100% - 32px));min-height:590px;margin:12px auto 46px;border:1.5px solid rgba(7,63,49,.90);border-radius:28px;overflow:hidden;position:relative;isolation:isolate;display:flex;align-items:center;background-size:cover!important;background-repeat:no-repeat!important}
+.locked-site .outlined-hero::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:linear-gradient(90deg,rgba(5,55,42,.97) 0%,rgba(5,55,42,.93) 40%,rgba(5,55,42,.71) 63%,rgba(5,55,42,.42) 100%)}
+.locked-site .outlined-hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 80% 18%,rgba(210,146,47,.12),transparent 25%)}
+.locked-site .outlined-hero .container{width:100%;padding:0 clamp(30px,4vw,64px)}
+.locked-site .outlined-hero .inner{position:relative;z-index:2;max-width:720px;padding:84px 0 88px}
+.locked-site .outlined-hero .eyebrow{color:#e4aa51!important;margin-bottom:18px}
+.locked-site .outlined-hero h1{color:#fff!important;font-size:clamp(3.8rem,5vw,5.55rem);line-height:.96;letter-spacing:-.04em;margin:0}
+.locked-site .outlined-hero .lead{color:rgba(255,255,255,.89)!important;max-width:665px;font-size:1.15rem;line-height:1.58;margin-top:26px}
+.services-page .outlined-hero{background-image:url("assets/locked-services-hero.png")!important;background-position:center 50%!important}
+.about-page .outlined-hero{background-image:url("assets/locked-about-hero.png")!important;background-position:right center!important}
+.contact-page .outlined-hero{background-image:url("assets/contact-hero-manitoba.jpg")!important;background-position:center 54%!important}
+.home-page .home-hero-final{min-height:650px;display:flex;align-items:center;position:relative;overflow:hidden;background:url("assets/winnipeg-real.jpg") center 48%/cover no-repeat!important}
+.home-page .home-hero-overlay{position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(5,55,42,.97) 0%,rgba(5,55,42,.92) 42%,rgba(5,55,42,.69) 64%,rgba(5,55,42,.39) 100%),radial-gradient(circle at 76% 20%,rgba(210,146,47,.13),transparent 25%)!important}
+.home-page .home-hero-final-inner{position:relative;z-index:2;width:100%}.home-page .home-hero-final-copy{max-width:710px;padding:90px 0 96px}.home-page .home-hero-final-copy .hero-kicker{color:#e4aa51!important}.home-page .home-hero-final-copy h1{color:#fff!important;font-size:clamp(3.9rem,5.6vw,5.9rem);line-height:.95;letter-spacing:-.045em}.home-page .home-hero-final-copy h1 span{color:#e2a039!important}.home-page .home-hero-final-copy p{color:rgba(255,255,255,.89)!important;font-size:1.14rem;line-height:1.6;max-width:610px}.home-page .home-btn-gold{background:#d28d26!important;color:#fff!important;border-color:#d28d26!important}.home-page .home-btn-outline{color:#fff!important;border-color:rgba(255,255,255,.92)!important;background:rgba(255,255,255,.03)!important}
+.home-page .skyline-presence{position:relative;width:min(1280px,calc(100% - 32px));margin:54px auto;min-height:520px;border:1.5px solid rgba(7,63,49,.78);border-radius:28px;overflow:hidden;background:linear-gradient(90deg,rgba(251,246,238,.98) 0%,rgba(251,246,238,.95) 44%,rgba(251,246,238,.78) 63%,rgba(251,246,238,.30) 100%),url("assets/winnipeg-real.jpg") center 54%/cover no-repeat!important}
+.locked-site .price-strip h2,.locked-site .price-strip h2 *{color:#fff!important}.locked-site .price-strip .eyebrow{color:#e4aa51!important}
+.locked-site .footer-legal{display:flex;justify-content:space-between;align-items:center;gap:18px}.locked-site .footer-legal>span:last-child{display:inline-flex;align-items:center;gap:10px}.locked-site .legal-sep{opacity:.5}
+@media(max-width:900px){.locked-site .outlined-hero{min-height:690px;align-items:flex-start}.locked-site .outlined-hero::before{background:linear-gradient(180deg,rgba(5,55,42,.98) 0%,rgba(5,55,42,.95) 54%,rgba(5,55,42,.74) 76%,rgba(5,55,42,.43) 100%)}.locked-site .outlined-hero .inner{padding:60px 0 300px;max-width:none}.services-page .outlined-hero{background-position:center 78%!important}.about-page .outlined-hero{background-position:center 88%!important}.contact-page .outlined-hero{background-position:center 78%!important}.home-page .home-hero-final{min-height:730px;background-position:center 62%!important}.home-page .home-hero-overlay{background:linear-gradient(180deg,rgba(5,55,42,.98) 0%,rgba(5,55,42,.95) 55%,rgba(5,55,42,.72) 77%,rgba(5,55,42,.40) 100%)!important}.home-page .home-hero-final-copy{padding:62px 22px 290px}}
+@media(max-width:700px){.locked-site .outlined-hero{width:calc(100% - 20px);margin-top:10px;border-radius:22px}.locked-site .outlined-hero h1{font-size:clamp(3.05rem,11vw,4.15rem)}.home-page .home-hero-final-copy h1{font-size:clamp(3.05rem,12vw,4.2rem)}.locked-site .footer-legal{flex-direction:column;text-align:center}}
+
+
+/* =========================================================
+   FINAL CONSISTENCY LOCK — HOME IS THE HERO BENCHMARK
+   ========================================================= */
+
+/* Shared hero shell: no inner-page border or rounded card treatment. */
+.locked-site .outlined-hero{
+  width:100% !important;
+  max-width:none !important;
+  min-height:650px !important;
+  margin:0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  position:relative;
+  isolation:isolate;
+  background-color:#073f31 !important;
+  background-repeat:no-repeat !important;
+  background-size:cover !important;
+}
+
+/* One overlay language across Home, Services, About and Contact. */
+.locked-site .outlined-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  border-radius:0 !important;
+  background:
+    linear-gradient(90deg,
+      rgba(5,55,42,.97) 0%,
+      rgba(5,55,42,.92) 42%,
+      rgba(5,55,42,.69) 64%,
+      rgba(5,55,42,.39) 100%) !important;
+}
+.locked-site .outlined-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:radial-gradient(circle at 76% 20%,rgba(210,146,47,.13),transparent 25%) !important;
+}
+
+/* Consistent horizontal inset — fixes Home text crowding the viewport edge. */
+.home-page .home-hero-final-inner,
+.locked-site .outlined-hero .container{
+  width:100% !important;
+  max-width:none !important;
+  padding-left:clamp(64px,6vw,118px) !important;
+  padding-right:clamp(64px,6vw,118px) !important;
+  margin:0 !important;
+}
+.home-page .home-hero-final-copy,
+.locked-site .outlined-hero .inner{
+  max-width:760px !important;
+}
+.home-page .home-hero-final-copy{
+  padding:90px 0 96px !important;
+}
+.locked-site .outlined-hero .inner{
+  padding:88px 0 92px !important;
+  position:relative;
+  z-index:3;
+}
+.locked-site .outlined-hero .eyebrow{color:#e4aa51 !important}
+.locked-site .outlined-hero h1{color:#fff !important}
+.locked-site .outlined-hero .lead{color:rgba(255,255,255,.89) !important}
+
+/* Home remains the reference visual. */
+.home-page .home-hero-final{
+  min-height:650px !important;
+  background:url("assets/winnipeg-real.jpg") center 48% / cover no-repeat !important;
+}
+.home-page .home-hero-overlay{
+  background:
+    linear-gradient(90deg,
+      rgba(5,55,42,.97) 0%,
+      rgba(5,55,42,.92) 42%,
+      rgba(5,55,42,.69) 64%,
+      rgba(5,55,42,.39) 100%),
+    radial-gradient(circle at 76% 20%,rgba(210,146,47,.13),transparent 25%) !important;
+}
+
+/* Services: clean laptop showcase, not a busy full-bleed collage. */
+.services-page .outlined-hero{
+  background:
+    radial-gradient(circle at 82% 28%,rgba(255,255,255,.08),transparent 26%),
+    linear-gradient(135deg,#0b5b45 0%,#073f31 100%) !important;
+}
+.services-page .outlined-hero::before{
+  background:
+    linear-gradient(90deg,
+      rgba(5,55,42,.98) 0%,
+      rgba(5,55,42,.94) 43%,
+      rgba(5,55,42,.70) 63%,
+      rgba(5,55,42,.42) 100%) !important;
+}
+.hero-grid-consistent{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(470px,.9fr);
+  gap:48px;
+  align-items:center;
+}
+.service-laptop-stage{
+  position:relative;
+  min-height:430px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:2;
+}
+.service-laptop{
+  width:min(520px,92%);
+  position:relative;
+  transform:perspective(1200px) rotateY(-5deg) rotateX(1deg);
+  filter:drop-shadow(0 30px 42px rgba(0,0,0,.28));
+}
+.service-laptop-screen{
+  background:#111b1a;
+  border:12px solid #16211f;
+  border-bottom-width:16px;
+  border-radius:18px 18px 10px 10px;
+  overflow:hidden;
+  aspect-ratio:16/10;
+}
+.service-laptop-screen img{
+  width:100%;height:100%;object-fit:cover;object-position:center;display:block;
+}
+.service-laptop-base{
+  width:112%;height:18px;margin-left:-6%;
+  background:linear-gradient(#d7d9d7,#9da4a0);
+  border-radius:2px 2px 14px 14px;
+  box-shadow:0 8px 12px rgba(0,0,0,.18);
+}
+.service-chip{
+  position:absolute;
+  padding:13px 16px;
+  border-radius:14px;
+  background:rgba(251,246,238,.93);
+  border:1px solid rgba(255,255,255,.65);
+  box-shadow:0 14px 30px rgba(0,0,0,.14);
+  color:#17342d;
+  min-width:170px;
+}
+.service-chip strong,.service-chip span{display:block}
+.service-chip strong{font-size:.9rem}
+.service-chip span{font-size:.72rem;color:#65736f;margin-top:3px}
+.chip-one{right:2%;top:15%}.chip-two{left:1%;bottom:11%}
+
+/* About: same approved professional portrait appears softly in hero,
+   then sharply in the very next section. */
+.about-page .outlined-hero{
+  background-color:#073f31 !important;
+  background-image:none !important;
+}
+.about-page .outlined-hero::after{
+  content:"";
+  position:absolute;
+  inset:-18px -18px -18px 48%;
+  z-index:-2;
+  background:url("assets/ayo-about-professional.png") center 30% / cover no-repeat;
+  filter:blur(12px) saturate(.8);
+  opacity:.47;
+  transform:scale(1.03);
+}
+.about-page .outlined-hero::before{
+  z-index:-1;
+  background:
+    linear-gradient(90deg,
+      rgba(5,55,42,.98) 0%,
+      rgba(5,55,42,.94) 43%,
+      rgba(5,55,42,.75) 64%,
+      rgba(5,55,42,.50) 100%) !important;
+}
+
+/* Contact: same borderless hero and same overlay, Manitoba image only changes the scene. */
+.contact-page .outlined-hero{
+  background-image:url("assets/contact-hero-manitoba.jpg") !important;
+  background-position:center 54% !important;
+}
+
+/* Mobile maintains the same hero language without side borders. */
+@media(max-width:980px){
+  .home-page .home-hero-final-inner,
+  .locked-site .outlined-hero .container{
+    padding-left:32px !important;
+    padding-right:32px !important;
+  }
+  .hero-grid-consistent{grid-template-columns:1fr;gap:0}
+  .service-laptop-stage{min-height:340px;margin-top:-60px;padding-bottom:32px}
+  .service-laptop{width:min(480px,88%)}
+  .locked-site .outlined-hero{min-height:700px !important}
+  .about-page .outlined-hero::after{inset:44% -12px -20px 12%;background-position:center 24%;opacity:.38}
+  .locked-site .outlined-hero::before{
+    background:linear-gradient(180deg,rgba(5,55,42,.98) 0%,rgba(5,55,42,.95) 55%,rgba(5,55,42,.72) 78%,rgba(5,55,42,.45) 100%) !important;
+  }
+}
+@media(max-width:700px){
+  .home-page .home-hero-final-inner,
+  .locked-site .outlined-hero .container{
+    padding-left:22px !important;
+    padding-right:22px !important;
+  }
+  .locked-site .outlined-hero{border-radius:0 !important;width:100% !important;margin:0 !important}
+  .service-chip{display:none}
+  .service-laptop-stage{min-height:280px;margin-top:-35px}
+}
+.contact-page .outlined-hero{
+  min-height:500px !important;
+}
+/* Home hero height */
+.home-page .home-hero-final {
+  min-height: 500px !important;
+}
+.proof-band {
+  min-height: 220px !important;
+  display: flex;
+  align-items: center;
+}
+/* Home proof row */
+.proof-band {
+  padding: 18px 0 22px !important;
+}
+
+.proof-grid > div {
+  padding: 10px 12px !important;
+}
+
+.proof-grid span {
+  width: 50px !important;
+  height: 50px !important;
+  margin-bottom: 8px !important;
+}
